@@ -1,0 +1,56 @@
+.idea/
+tmp/
+docker-compose.local.yml
+.DS_Store
+*.log
+
+mysqldata/*
+!mysqldata/.gitkeep
+
+node_modules
+
+# Cache and logs (Symfony2)
+sylius/app/cache/*
+sylius/app/logs/*
+!sylius/app/cache/.gitkeep
+!sylius/app/logs/.gitkeep
+
+# Email spool folder
+sylius/app/spool/*
+
+# Cache, session files and logs (Symfony3)
+sylius/var/cache/*
+sylius/var/logs/*
+sylius/var/sessions/*
+!sylius/var/cache/.gitkeep
+!sylius/var/logs/.gitkeep
+!sylius/var/sessions/.gitkeep
+
+# Parameters
+sylius/app/config/parameters.yml
+sylius/app/config/parameters.ini
+
+# Managed by Composer
+sylius/app/bootstrap.php.cache
+sylius/var/bootstrap.php.cache
+sylius/bin/*
+!sylius/bin/console
+!sylius/bin/symfony_requirements
+sylius/vendor/
+
+# Assets and user uploads
+sylius/web/bundles/
+sylius/web/uploads/
+
+# PHPUnit
+sylius/app/phpunit.xml
+sylius/phpunit.xml
+
+# Build data
+sylius/build/
+
+# Backup entities generated with doctrine:generate:entities command
+**/Entity/*~
+
+# Embedded web-server pid file
+.web-server-pid
