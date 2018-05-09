@@ -24,19 +24,40 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 # libjpeg62-turbo-dev is required to support JPEG in php-gd extention
 # libfreetype6-dev is required by php-gd extention
 # libpng-dev is required by php-gd extention
+# libwebp-dev is required by php-gd extention to support webp files
+# libxpm-dev is required by php-gd extention
 RUN apt-get update \
-	&& apt-get install -y libpng-dev libicu-dev apt-utils curl zip unzip git libzip-dev libjpeg62-turbo-dev libfreetype6-dev libpng-dev --no-install-recommends \
+	&& apt-get install -y --no-install-recommends \
+		libpng-dev \
+		libicu-dev \
+		apt-utils \
+		curl \
+		zip \
+		unzip \
+		git \
+		libzip-dev \
+		libjpeg62-turbo-dev \
+		libfreetype6-dev \
+		libpng-dev \
+		libwebp-dev \
+		libxpm-dev \
 	&& pecl install xdebug-2.6.0 \
  	&& docker-php-ext-configure zip --with-libzip \
- 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ --with-png-dir=/usr/include/ \
+ 	&& docker-php-ext-install zip \
+ 	&& docker-php-ext-configure gd \
+ 		--with-freetype-dir=/usr/include/ \
+ 		--with-jpeg-dir=/usr/include/ \
+ 		--with-png-dir=/usr/include/ \
+ 		--with-xpm-dir=/usr/include/ \
+		--with-webp-dir=/usr/include/ \
  	&& docker-php-ext-install -j$(nproc) gd \
 	&& docker-php-ext-install \
 		exif \
 		fileinfo \
+		iconv \
 		intl \
 		pdo \
 		pdo_mysql \
-		zip \
 	&& docker-php-ext-enable \
 		opcache \
 		xdebug \
