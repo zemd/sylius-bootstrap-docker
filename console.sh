@@ -51,7 +51,7 @@ if [ $# -gt 0 ]; then
 	elif [ "$1" == "create-project" ]; then
 		# if "create-project" is used create new project in current directory with composer
 		shift 1
-		mkdir $SYLIUS_SOURCE_DIR -p
+		mkdir $SYLIUS_SOURCE_DIR
 		$COMPOSE run --rm $TTY \
 			-w $SYLIUS_WORKING_DIR \
 			$SYLIUS_SERVICE_NAME \
