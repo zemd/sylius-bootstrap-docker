@@ -9,7 +9,7 @@ export RUN_AS_UID=${RUN_AS_UID:-33}
 export COMPOSE_ENTRY_FILE=${COMPOSE_ENTRY_FILE:-"docker-compose.yml"}
 
 ## Sylius variables
-export SYLIUS_VERSION=${SYLIUS_VERSION:-1.1.1}
+export SYLIUS_VERSION=${SYLIUS_VERSION:-1.1.5}
 export SYLIUS_NAME=${SYLIUS_NAME:-"sylius-standard"}
 export SYLIUS_SOURCE_DIRNAME=${SYLIUS_SOURCE_DIRNAME:-sylius}
 export SYLIUS_SOURCE_DIR=${SYLIUS_SOURCE_DIR:-"$CWD/$SYLIUS_SOURCE_DIRNAME"} # on host machine
