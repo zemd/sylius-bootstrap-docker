@@ -29,8 +29,8 @@ cd myshinyapp
 ./console.sh create-project [options]
 ./console.sh npm install
 ./console.sh gulp
-./console.sh console sylius:install
 ./console.sh up -d
+./console.sh console sylius:install
 ./console.sh down
 ```
 
